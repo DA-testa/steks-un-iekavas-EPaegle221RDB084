@@ -1,11 +1,11 @@
 # python3
 
 from collections import namedtuple
- 
+
 Bracket = namedtuple("Bracket", ["char", "position"])
 
 def are_matching(left, right):
-    return (left + right) in ["()", "[]", "{}"]
+    return left + right in ["()", "[]", "{}"]
 
 def find_mismatch(text):
     opening_brackets_stack = []
@@ -15,7 +15,7 @@ def find_mismatch(text):
         if next in ")]}":
             if not opening_brackets_stack or not are_matching(opening_brackets_stack[-1].char, next):
                 #next != {'(': ')', '{': '}', '[': ']'}[opening_brackets_stack[-1][0]]:
-                return(i + 1)
+                return i + 1
             opening_brackets_stack.pop()\
 
     if opening_brackets_stack:
