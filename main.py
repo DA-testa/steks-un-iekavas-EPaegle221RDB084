@@ -1,6 +1,7 @@
 # python3
 
 from collections import namedtuple
+import sys
 
 Bracket = namedtuple("Bracket", ["char", "position"])
 
