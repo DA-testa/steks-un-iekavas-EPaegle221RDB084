@@ -22,23 +22,16 @@ def find_mismatch(text):
         else:
              return "Success"
     
-    input_type = input("Choose 'F' for file input or 'I' for manual input: ")
+def main():
+    input_type = input
 
     if input_type.upper() == "F":
-        # Handle file input
-        file_name = input("Enter the name of the file: ")
+        file_name = input
         with open(file_name) as f:
             text = f.read()
     elif input_type.upper() == "I":
-        # Handle manual input
-        text = input("Enter the brackets: ")
-    else:
-        print("Invalid input type.")
-        return
+        text = input
 
-
-def main():
-    text = input()
     mismatch = find_mismatch(text)
     if mismatch == "Succcess":
         print("Success")
