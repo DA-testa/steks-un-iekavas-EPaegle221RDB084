@@ -16,12 +16,26 @@ def find_mismatch(text):
             if not opening_brackets_stack or not are_matching(opening_brackets_stack[-1].char, next):
                 #next != {'(': ')', '{': '}', '[': ']'}[opening_brackets_stack[-1][0]]:
                 return i + 1
-            opening_brackets_stack.pop()\
+            opening_brackets_stack.pop()
+        if opening_brackets_stack:
+             return opening_brackets_stack[0].position
+        else:
+             return "Success"
+    
+    input_type = input("Choose 'F' for file input or 'I' for manual input: ")
 
-    if opening_brackets_stack:
-        return opening_brackets_stack[0].position
+    if input_type.upper() == "F":
+        # Handle file input
+        file_name = input("Enter the name of the file: ")
+        with open(file_name) as f:
+            text = f.read()
+    elif input_type.upper() == "I":
+        # Handle manual input
+        text = input("Enter the brackets: ")
     else:
-        return "Success"
+        print("Invalid input type.")
+        return
+
 
 def main():
     text = input()
