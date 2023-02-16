@@ -23,19 +23,20 @@ def find_mismatch(text):
         return "Success"
     
 def main():
-    input_type = input()
+    # input_type = input()
 
-    if input_type == "F":
-        file_name = input()
-        with open(file_name) as f:
-            text = f.read().strip()
-        mismatch = find_mismatch(text)
-    elif input_type == "I":
-        text = input().strip()
-        mismatch = find_mismatch(text)
-    else:
-        print("Invalid input type.")
-        return
+    # if input_type == "F":
+    #     file_name = input()
+    #     with open(file_name) as f:
+    #         text = f.read().strip()
+    text = input().strip()
+    mismatch = find_mismatch(text)
+    # elif input_type == "I":
+    #     text = input().strip()
+    #     mismatch = find_mismatch(text)
+    # else:
+    #     print("Invalid input type.")
+    #     return
 
     if mismatch == "Success":
         print("Success")
