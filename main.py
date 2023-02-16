@@ -28,10 +28,10 @@ def main():
     if input_type == "F":
         file_name = input()
         with open(file_name) as f:
-            text = f.read()
+            text = f.read().strip()
         mismatch = find_mismatch(text)
     elif input_type == "I":
-        text = input()
+        text = input().strip()
         mismatch = find_mismatch(text)
     else:
         print("Invalid input type.")
